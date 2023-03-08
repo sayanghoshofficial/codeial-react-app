@@ -1,7 +1,7 @@
-import { LOCALSTORAGE_TOKEN_KEY } from '../utils';
+import { API_URLS, LOCALSTORAGE_TOKEN_KEY } from '../utils';
 
 const customFetch = async (url, { body, ...customConfig }) => {
-  const token = localStorage.getItem(LOCALSTORAGE_TOKEN_KEY);
+  const token = window.localStorage.getItem(LOCALSTORAGE_TOKEN_KEY);
 
   const headers = {
     'content-type': 'application/json',
@@ -9,7 +9,7 @@ const customFetch = async (url, { body, ...customConfig }) => {
   };
 
   if (token) {
-    headers.authorization = `Bearer ${token}`;
+    headers.Authorization = `Bearer ${token}`;
   }
 
   const config = {
@@ -28,24 +28,24 @@ const customFetch = async (url, { body, ...customConfig }) => {
     const response = await fetch(url, config);
     const data = await response.json();
 
-    if (response.success) {
+    if (data.success) {
       return {
-        data: data,
+        data: data.data,
         success: true,
       };
     }
     throw new Error(data.message);
   } catch (error) {
     console.error('error');
-    if (response.success) {
-      return {
-        message: error.message,
-        success: false,
-      };
-    }
+    return {
+      message: error.message,
+      success: false,
+    };
   }
 };
 
-const getPosts = (page, limit) => {
-  return customFetch();
+export const getPosts = (page = 1, limit = 5) => {
+  return customFetch(API_URLS.posts(page, limit), {
+    method: 'GET',
+  });
 };
