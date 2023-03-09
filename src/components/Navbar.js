@@ -4,19 +4,19 @@ export const Navbar = () => {
     <div className={styles.nav}>
       <div className={styles.leftDiv}>
         <a href="/">
-          <img 
-          alt="" 
-          src="https://ninjasfiles.s3.amazonaws.com/0000000000003454.png" 
+          <img
+            alt=""
+            src="https://ninjasfiles.s3.amazonaws.com/0000000000003454.png"
           />
         </a>
       </div>
       <div className={styles.rightNav}>
         <div className={styles.user}>
           <a href="/">
-            <img 
-            alt="" 
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" 
-            className={styles.userDp} 
+            <img
+              alt=""
+              src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+              className={styles.userDp}
             />
           </a>
           <span>Sayan</span>
@@ -30,7 +30,7 @@ export const Navbar = () => {
               <a href="/">Log Out</a>
             </li>
             <li>
-                <a href="/">Register</a>
+              <a href="/">Register</a>
             </li>
           </ul>
         </div>

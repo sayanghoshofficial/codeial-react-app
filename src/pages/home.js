@@ -1,8 +1,8 @@
-import styles from "../styles/home.module.css";
-import PropTypes from "prop-types";
+import styles from '../styles/home.module.css';
+import PropTypes from 'prop-types';
 import { Comment } from '../components';
 
-export const Home = ({ posts }) => {
+const Home = ({ posts }) => {
   return (
     <div className={styles.postsList}>
       {posts.map((post) => (
@@ -45,14 +45,16 @@ export const Home = ({ posts }) => {
               {post.comments.map((comment) => (
                 <Comment comment={comment} />
               ))}
-              </div>
             </div>
           </div>
+        </div>
       ))}
     </div>
   );
 };
 
 Home.prototype = {
-    posts : PropTypes.array.isRequired,
-}
+  posts: PropTypes.array.isRequired,
+};
+
+export default Home;
