@@ -1,14 +1,16 @@
+import { Link } from 'react-router-dom';
 import styles from '../styles/navbar.module.css';
+
 export const Navbar = () => {
   return (
     <div className={styles.nav}>
       <div className={styles.leftDiv}>
-        <a href="/">
+        <Link to="/">
           <img
             alt=""
             src="https://ninjasfiles.s3.amazonaws.com/0000000000003454.png"
           />
-        </a>
+        </Link>
       </div>
       <div className={styles.rightNav}>
         <div className={styles.user}>
@@ -24,13 +26,13 @@ export const Navbar = () => {
         <div className={styles.navLinks}>
           <ul>
             <li>
-              <a href="/">Log In</a>
+              <Link to="/login">Log In</Link>
             </li>
             <li>
-              <a href="/">Log Out</a>
+              <Link to="/logout">Log Out</Link>
             </li>
             <li>
-              <a href="/">Register</a>
+              <Link href="/">Register</Link>
             </li>
           </ul>
         </div>
