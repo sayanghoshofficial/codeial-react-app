@@ -6,9 +6,9 @@ import { App } from './components';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <ToastProvider autoDismiss autoDismissTimeout={5000} placement="top-left">
+  <ToastProvider autoDismiss autoDismissTimeout={5000} placement="top-left">
+    <React.StrictMode>
       <App />
-    </ToastProvider>
-  </React.StrictMode>
+    </React.StrictMode>
+  </ToastProvider>
 );
