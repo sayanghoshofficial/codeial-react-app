@@ -1,8 +1,6 @@
 export * from './constants';
 
 export const setItemInLocalStorage = (key, value) => {
-  console.log("key",key);
-  console.log("value",value);
   if (!key || !value) {
     return console.error('Can not store in local storage....');
   }
@@ -28,8 +26,6 @@ export const removeItemFromLocalStorage = (value, key) => {
 
   localStorage.removeItem(key);
 };
-
-
 
 export const getFormBody = (params) => {
   let formBody = [];
