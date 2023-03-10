@@ -9,7 +9,7 @@ const Login = () => {
   const [loggingIn, setLoggingIn] = useState(false);
   const { addToast } = useToasts();
   const auth = useAuth();
-  
+  console.log(auth);
 
   const handledFormSubmit = async(e) => {
     e.preventDefault();
