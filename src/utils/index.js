@@ -1,8 +1,8 @@
-import { json } from 'react-router-dom';
-
 export * from './constants';
 
 export const setItemInLocalStorage = (key, value) => {
+  console.log("key",key);
+  console.log("value",value);
   if (!key || !value) {
     return console.error('Can not store in local storage....');
   }
@@ -18,7 +18,7 @@ export const getItemFromLocalStorage = (key) => {
     return console.error('Can not get the value from local storage....');
   }
 
-  localStorage.getItem(key);
+  return localStorage.getItem(key);
 };
 
 export const removeItemFromLocalStorage = (value, key) => {
