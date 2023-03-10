@@ -18,13 +18,13 @@ export const Navbar = () => {
       <div className={styles.rightNav}>
         {auth.user && (
           <div className={styles.user}>
-            <a href="/">
+            <Link to="/settings">
               <img
                 alt=""
                 src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
                 className={styles.userDp}
               />
-            </a>
+            </Link>
             <span>{auth.user.name}</span>
           </div>
         )}
