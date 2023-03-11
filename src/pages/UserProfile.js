@@ -54,19 +54,19 @@ const UserProfile = () => {
   
 
   const handledRemoveFriendOnClick = async() => {
-    // setReuqestInProgress(true);
-    // const response = await removeFriends(userId);
-    // if(response.success) {
-    //   addToast('Friends added Successfully! ...', {
-    //     appearance: 'success',
-    //   });
-    // } else {
-    //   addToast(response.message, {
-    //     appearance: 'error',
-    //   });
-    // }
-    // setReuqestInProgress(false);
-    // setIsFriend(false);
+    setReuqestInProgress(true);
+    const response = await removeFriends(userId);
+    if(response.success) {
+      addToast('Friends added Successfully! ...', {
+        appearance: 'success',
+      });
+    } else {
+      addToast(response.message, {
+        appearance: 'error',
+      });
+    }
+    setReuqestInProgress(false);
+    setIsFriend(false);
   };
 
   const handledAddFriendOnClick = async () => {
