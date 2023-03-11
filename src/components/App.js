@@ -10,7 +10,7 @@ import { Loader, Navbar } from './';
 
 function PrivateRoute({ children, ...rest }) {
   const auth = useAuth();
-
+  console.log("Auth",auth);
   if (auth.user) {
     return children;
   } else {
