@@ -57,7 +57,7 @@ const UserProfile = () => {
     setReuqestInProgress(true);
     const response = await removeFriends(userId);
     if(response.success) {
-      addToast('Friends added Successfully! ...', {
+      addToast('Friends removed Successfully! ...', {
         appearance: 'success',
       });
     } else {

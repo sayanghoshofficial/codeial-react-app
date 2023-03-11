@@ -30,12 +30,12 @@ export const useProvideAuth = () => {
         const response = await fetchUserFriends();
 
         let friends = [];
-        if(response.success){
+        if (response.success) {
           friends = response.data.friends;
         }
-        setUser ({
+        setUser({
           ...user,
-          friends
+          friends,
         });
       }
       setLoading(false);
@@ -104,15 +104,22 @@ export const useProvideAuth = () => {
     removeItemFromLocalStorage(LOCALSTORAGE_TOKEN_KEY);
   };
 
-  const updateUserFriends = (addFriend, friend)=>{
-    if(addFriend){
+  const updateUserFriends = (addFriend, friend) => {
+    if (addFriend) {
       setUser({
         ...user,
         friends: [...user.friends, friend],
       });
       return;
     }
-  }
+    const newFriends = user.friends.filter(
+      (f) => f.to_user._id !== friend.to_user._id
+    );
+    setUser({
+      ...user,
+      friends: newFriends,
+    })
+  };
 
   return {
     user,
