@@ -17,6 +17,7 @@ const UserProfile = () => {
   const [reuqestInProgress, setReuqestInProgress] = useState(false);
   const [isFriend, setIsFriend] = useState(true);
   const { userId } = useParams();
+  console.log(userId);
   const { addToast } = useToasts();
   const nevigate = useNavigate();
   const auth = useAuth();
@@ -93,11 +94,7 @@ const UserProfile = () => {
     <div className={styles.settings}>
       <div className={styles.imgContainer}>
         <img
-          src={
-            user.avatar
-              ? user.avatar
-              : 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'
-          }
+          src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
           alt="user pic"
         />
       </div>

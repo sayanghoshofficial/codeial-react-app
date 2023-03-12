@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import styles from '../styles/home.module.css';
-import PropTypes from 'prop-types';
 import { Comment, CreatePost, FriendsList, Loader } from '../components';
 import { useAuth, usePosts } from '../hooks';
 
@@ -74,10 +73,6 @@ const Home = () => {
       {auth.user && <FriendsList />}
     </div>
   );
-};
-
-Home.prototype = {
-  posts: PropTypes.array.isRequired,
 };
 
 export default Home;

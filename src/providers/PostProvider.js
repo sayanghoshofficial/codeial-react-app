@@ -4,12 +4,14 @@ import { useProvidePosts } from '../hooks';
 const initialState = {
   post: [],
   loading: true,
-  addPostToState: ()=>{},
+  addPostToState: () => {},
 };
 export const PostsContext = createContext(initialState);
 
 export const PostsProvider = ({ children }) => {
   const posts = useProvidePosts();
 
-  return <AuthContext.Provider value={posts}>{children}</AuthContext.Provider>;
+  return (
+    <PostsContext.Provider value={posts}>{children}</PostsContext.Provider>
+  );
 };
