@@ -17,7 +17,6 @@ const UserProfile = () => {
   const [reuqestInProgress, setReuqestInProgress] = useState(false);
   const [isFriend, setIsFriend] = useState(true);
   const { userId } = useParams();
-  console.log(userId);
   const { addToast } = useToasts();
   const nevigate = useNavigate();
   const auth = useAuth();
