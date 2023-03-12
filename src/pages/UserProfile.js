@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
-import { addFriends, fetchUserProfile, fetchFriends,removeFriends } from '../api';
+import {
+  addFriends,
+  fetchUserProfile,
+  fetchFriends,
+  removeFriends,
+} from '../api';
 import { Loader } from '../components';
 import { useAuth } from '../hooks';
 import styles from '../styles/settings.module.css';
@@ -29,12 +34,12 @@ const UserProfile = () => {
       }
       setLoading(false);
     };
-    const checkIfUserHasAFriend = async() => {
+    const checkIfUserHasAFriend = async () => {
       const response = await fetchFriends();
       const friends = response.data.friends;
       const friendIds = friends.map((friend) => friend.to_user._id);
       const index = friendIds.indexOf(userId);
-  
+
       if (index !== -1) {
         setIsFriend(true);
         return true;
@@ -51,12 +56,10 @@ const UserProfile = () => {
     return <Loader />;
   }
 
-  
-
-  const handledRemoveFriendOnClick = async() => {
+  const handledRemoveFriendOnClick = async () => {
     setReuqestInProgress(true);
     const response = await removeFriends(userId);
-    if(response.success) {
+    if (response.success) {
       addToast('Friends removed Successfully! ...', {
         appearance: 'success',
       });
@@ -90,8 +93,12 @@ const UserProfile = () => {
     <div className={styles.settings}>
       <div className={styles.imgContainer}>
         <img
-          src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-          alt=""
+          src={
+            user.avatar
+              ? user.avatar
+              : 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'
+          }
+          alt="user pic"
         />
       </div>
       <div className={styles.field}>
@@ -110,7 +117,7 @@ const UserProfile = () => {
             className={`button ${styles.saveBtn}`}
             onClick={handledRemoveFriendOnClick}
           >
-             {reuqestInProgress ? 'Removing friend..' : 'Remove Friend'}
+            {reuqestInProgress ? 'Removing friend..' : 'Remove Friend'}
           </button>
         ) : (
           <button

@@ -99,3 +99,12 @@ export const removeFriends = (userId) => {
     method: 'POST',
   })
 };
+
+export const createPost = (content) => {
+  return customFetch(API_URLS.createPost(), {
+    method: 'POST',
+    body: {
+      content,
+    }
+  })
+};
