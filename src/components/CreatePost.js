@@ -17,7 +17,7 @@ const CreatePost = () => {
 
     if (response.success) {
       setPost('');
-      post.
+      posts.addPostToState(response.data.post);
       addToast('Post created ssuccessfully....', {
         appearance: 'success',
       });
