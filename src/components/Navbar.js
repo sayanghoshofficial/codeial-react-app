@@ -20,7 +20,7 @@ export const Navbar = () => {
     if(searchText.length > 2){
       fetchUsers();
       // if(fetchUsers){
-      //   setSearchText('');
+        // setSearchText('');
       //   setResults([]);
       // }
      
@@ -29,6 +29,11 @@ export const Navbar = () => {
     }
    
   },[searchText]);
+
+  const handledSelectUser = () =>{
+    setSearchText('');
+    setResults([]);
+  }
 
   return (
     <div className={styles.nav}>
@@ -58,6 +63,7 @@ export const Navbar = () => {
                 <li
                   className={styles.searchResultsRow}
                   key={`user-${user._id}`}
+                  onClick={handledSelectUser}
                 >
                   <Link to={`/user/${user._id}`}>
                     <img
