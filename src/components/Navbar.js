@@ -3,6 +3,7 @@ import { useAuth } from '../hooks';
 import styles from '../styles/navbar.module.css';
 
 export const Navbar = () => {
+  const [result, setResult]
   const auth = useAuth();
 
   return (
