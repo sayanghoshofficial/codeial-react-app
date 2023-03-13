@@ -70,6 +70,15 @@
     display: flex;
     align-items: center;
   }
+  .postLike button{
+    margin: 0;
+    border: none;
+    background-color: transparent;
+  }
+  .postLike button img{
+    width: 20px;
+    height: 20px;
+  }
   .postCommentsIcon {
     margin-left: 15px;
     display: flex;

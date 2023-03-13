@@ -37,7 +37,6 @@ const Post = ({ post }) => {
   };
 
   const handledPostLikeOnClick = async() =>{
-    // console.log(post._id);
     const response = await toggleLike(post._id,'Post')
 
     if (response.success) {
