@@ -1,3 +1,8 @@
+# Create React Calculator App
+
+This is the Hosting Page [Codeial App](https://sayanghoshofficial.github.io/codeial-react-app)
+<img src="https://user-images.githubusercontent.com/99132893/227273941-406eea43-2dbd-4224-93d1-ac4ca5e03b97.jpg"/>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
