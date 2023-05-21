@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
+      <Router basename="/codeial-react-app">
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home posts={[]} />} />
